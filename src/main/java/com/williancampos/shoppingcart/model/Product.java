@@ -99,8 +99,8 @@ public final class Product implements Serializable {
 		 *             if the <code>imageBytes</code> is <code>null</code> or empty
 		 */
 		public Builder setImageBytes(final byte[] imageBytes) {
-			checkState(imageBytes != null, "The image bytes must not be null.");
-			checkState(imageBytes.length > 0, "The image bytes must not be empty.");
+			checkArgument(imageBytes != null, "The image bytes must not be null.");
+			checkArgument(imageBytes.length > 0, "The image bytes must not be empty.");
 			this.imageBytes = imageBytes;
 			return this;
 		}
@@ -115,7 +115,7 @@ public final class Product implements Serializable {
 		 *             if the <code>price</code> is not positive
 		 */
 		public Builder setPrice(final double price) {
-			checkState(price > 0, "The price must to be positive.");
+			checkArgument(price > 0, "The price must to be positive.");
 			this.price = price;
 			return this;
 		}
@@ -133,7 +133,7 @@ public final class Product implements Serializable {
 			checkState(name != null, "The name must to be provided.");
 			checkState(description != null, "The description must to be provided.");
 			checkState(price != null, "The price must to be provided.");
-			return new Product(name, description, imageBytes, price);
+			return new Product(identifier, name, description, imageBytes, price);
 		}
 	}
 
@@ -153,11 +153,21 @@ public final class Product implements Serializable {
 	private Product() {
 	}
 
-	private Product(final String name, final String description, final byte[] imageBytes, final double price) {
+	private Product(final String identifier, final String name, final String description, final byte[] imageBytes, final double price) {
+		this.identifier = identifier;
 		this.name = name;
 		this.description = description;
 		this.imageBytes = imageBytes;
 		this.price = price;
+	}
+	
+	/**
+	 * Returns the product identifier.
+	 * 
+	 * @return the product identifier
+	 */
+	public String getIdentifier() {
+		return identifier;
 	}
 
 	/**
