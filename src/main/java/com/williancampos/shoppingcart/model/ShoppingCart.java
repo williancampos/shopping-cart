@@ -17,7 +17,7 @@ public interface ShoppingCart {
 	 * @return the {@link ShoppingCartItem}s
 	 * @see ShoppingCartItem
 	 */
-	Set<ShoppingCartItem> getProducts();
+	Set<ShoppingCartItem> getItems();
 
 	/**
 	 * Add into the cart the specified quantity of a {@link Product}. If the
