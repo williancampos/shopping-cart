@@ -9,7 +9,7 @@ package com.williancampos.shoppingcart.model;
  * @see ShoppingCart
  *
  */
-public interface ShoppingCartProduct {
+public interface ShoppingCartItem {
 	
 	/**
 	 * Returns the associated {@link Product}.

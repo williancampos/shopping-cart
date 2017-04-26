@@ -12,12 +12,12 @@ import java.util.Set;
 public interface ShoppingCart {
 
 	/**
-	 * Returns the {@link ShoppingCartProduct}s currently in the shopping cart.
+	 * Returns the {@link ShoppingCartItem}s currently in the shopping cart.
 	 * 
-	 * @return the {@link ShoppingCartProduct}s
-	 * @see ShoppingCartProduct
+	 * @return the {@link ShoppingCartItem}s
+	 * @see ShoppingCartItem
 	 */
-	Set<ShoppingCartProduct> getProducts();
+	Set<ShoppingCartItem> getProducts();
 
 	/**
 	 * Add into the cart the specified quantity of a {@link Product}. If the
