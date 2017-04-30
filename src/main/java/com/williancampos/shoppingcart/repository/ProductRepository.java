@@ -7,5 +7,7 @@ import com.williancampos.shoppingcart.model.Product;
 
 @Repository
 public interface ProductRepository extends MongoRepository<Product,String> {
+	
+	Product findByIdentifier(final String identifier);
 
 }
